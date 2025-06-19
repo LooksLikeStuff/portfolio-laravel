@@ -1,0 +1,6 @@
+// Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Import custom SCSS
+import '../scss/main.scss';
+

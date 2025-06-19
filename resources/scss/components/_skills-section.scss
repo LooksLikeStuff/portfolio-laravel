@@ -1,0 +1,165 @@
+@import '../variables';
+
+.skills-section {
+  padding: $spacing-xl 0;
+  background: $dark-bg;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    @include gradient-text;
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    flex-wrap: wrap;
+  }
+
+  &__category-btn {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius;
+    border: none;
+    font-weight: 500;
+    transition: all $transition-normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    &--active {
+      background: $gradient-primary;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-glow;
+    }
+
+    &--inactive {
+      @include card-style;
+      color: $text-light;
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__item {
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $spacing-sm;
+    }
+
+    &-name {
+      color: $text-light;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    &-percentage {
+      color: $primary-blue;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    height: 8px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: $spacing-xs;
+
+    &-bar {
+      height: 100%;
+      background: $gradient-primary;
+      border-radius: 4px;
+      transition: width 1s ease-in-out;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        animation: shimmer 2s infinite;
+      }
+    }
+  }
+
+  &__visualization {
+    @include flex-center;
+    position: relative;
+    height: 400px;
+  }
+
+  &__skill-circle {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    @include card-style;
+    @include flex-center;
+    transition: all $transition-normal;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: $shadow-glow;
+    }
+
+    &-icon {
+      font-size: 1.5rem;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+  }
+
+  &__loading {
+    @include flex-center;
+    color: $text-light;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+

@@ -1,0 +1,208 @@
+@import '../variables';
+
+.experience-section {
+  padding: $spacing-xl 0;
+  background: $card-bg;
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    @include gradient-text;
+  }
+
+  &__title-underline {
+    width: 100px;
+    height: 4px;
+    background: $gradient-primary;
+    margin: 0 auto;
+    border-radius: 50px;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__item {
+    margin-bottom: $spacing-xl;
+  }
+
+  &__card {
+    @include card-style;
+    border: none;
+    box-shadow: $shadow-sm;
+  }
+
+  &__card-body {
+    padding: $spacing-lg;
+  }
+
+  &__meta {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__status {
+    padding: $spacing-xs $spacing-md;
+    border-radius: 50px;
+    margin-bottom: $spacing-sm;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &--current {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    &--completed {
+      background: rgba(156, 163, 175, 0.2);
+      color: #9ca3af;
+      border: 1px solid rgba(156, 163, 175, 0.3);
+    }
+  }
+
+  &__duration {
+    color: $text-secondary;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-md;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+    }
+  }
+
+  &__company-info {
+    margin-bottom: $spacing-sm;
+
+    @media (min-width: 576px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__company {
+    color: $text-light;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__position {
+    color: $primary-blue;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  &__location-info {
+    text-align: left;
+
+    @media (min-width: 576px) {
+      text-align: right;
+    }
+  }
+
+  &__location {
+    color: $text-secondary;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-xs;
+
+    @media (min-width: 576px) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__website {
+    color: $primary-blue;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color $transition-fast;
+
+    @media (min-width: 576px) {
+      justify-content: flex-end;
+    }
+
+    &:hover {
+      color: lighten($primary-blue, 10%);
+    }
+  }
+
+  &__description {
+    color: $text-light;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+
+  &__responsibilities {
+    margin-bottom: $spacing-md;
+  }
+
+  &__technologies {
+    margin-bottom: 0;
+  }
+
+  &__section-title {
+    color: $text-light;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__list {
+    color: $text-light;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-left: $spacing-md;
+  }
+
+  &__list-item {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  &__tech-badge {
+    padding: $spacing-xs $spacing-md;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__loading {
+    @include flex-center;
+    color: $text-light;
+    text-align: center;
+    flex-direction: column;
+    padding: $spacing-xl;
+  }
+}
+

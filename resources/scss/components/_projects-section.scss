@@ -1,0 +1,271 @@
+@import '../variables';
+
+.projects-section {
+  padding: $spacing-xl 0;
+  background: $dark-bg;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    @include gradient-text;
+  }
+
+  &__title-underline {
+    width: 100px;
+    height: 4px;
+    background: $gradient-primary;
+    margin: 0 auto;
+    border-radius: 50px;
+  }
+
+  &__filters {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+    flex-wrap: wrap;
+  }
+
+  &__filter-btn {
+    padding: $spacing-sm $spacing-md;
+    border-radius: 50px;
+    border: none;
+    font-weight: 500;
+    transition: all $transition-normal;
+    cursor: pointer;
+
+    &--active {
+      background: $gradient-primary;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-glow;
+    }
+
+    &--inactive {
+      @include card-style;
+      color: $text-light;
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: $spacing-lg;
+  }
+
+  &__card {
+    @include card-style;
+    @include hover-lift;
+    transition: all $transition-normal;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: $shadow-glow;
+    }
+  }
+
+  &__card-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-icon {
+      font-size: 3rem;
+    }
+
+    &-status {
+      position: absolute;
+      top: $spacing-sm;
+      right: $spacing-sm;
+    }
+
+    &-year {
+      position: absolute;
+      bottom: $spacing-sm;
+      left: $spacing-sm;
+      color: $text-secondary;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__card-body {
+    padding: $spacing-lg;
+  }
+
+  &__card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $text-light;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__card-description {
+    color: $text-light;
+    line-height: 1.5;
+    margin-bottom: $spacing-md;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__card-technologies {
+    display: flex;
+    gap: $spacing-xs;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-md;
+  }
+
+  &__tech-badge {
+    padding: $spacing-xs $spacing-sm;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    &--more {
+      background: $text-secondary;
+      color: white;
+    }
+  }
+
+  &__card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card-links {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  &__card-link {
+    color: $text-light;
+    text-decoration: none;
+    padding: $spacing-xs;
+    border-radius: 6px;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: rgba(59, 130, 246, 0.1);
+      color: $primary-blue;
+    }
+  }
+
+  &__card-button {
+    @include button-primary;
+    font-size: 0.9rem;
+    padding: $spacing-xs $spacing-md;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+  }
+
+  &__empty {
+    @include flex-center;
+    color: $text-light;
+    font-size: 1.1rem;
+    padding: $spacing-xl;
+    text-align: center;
+    flex-direction: column;
+
+    &-icon {
+      font-size: 3rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  // Статусы проектов
+  &__status {
+    padding: $spacing-xs $spacing-sm;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    &--success {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    &--primary {
+      background: rgba(59, 130, 246, 0.2);
+      color: $primary-blue;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    &--secondary {
+      background: rgba(156, 163, 175, 0.2);
+      color: #9ca3af;
+      border: 1px solid rgba(156, 163, 175, 0.3);
+    }
+  }
+
+  // Модальное окно
+  &__modal {
+    .modal-content {
+      @include card-style;
+      background: $card-bg;
+      border: none;
+    }
+
+    .modal-header {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      
+      .modal-title {
+        color: $text-light;
+        font-weight: 700;
+      }
+
+      .btn-close {
+        filter: invert(1);
+      }
+    }
+
+    .modal-body {
+      color: $text-light;
+      line-height: 1.6;
+
+      h6 {
+        color: $text-light;
+        margin-top: $spacing-md;
+        margin-bottom: $spacing-sm;
+      }
+
+      ul {
+        padding-left: $spacing-md;
+
+        li {
+          margin-bottom: $spacing-xs;
+        }
+      }
+    }
+
+    .modal-footer {
+      border-top: none;
+    }
+  }
+}
+
+

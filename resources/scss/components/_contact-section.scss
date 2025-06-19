@@ -1,0 +1,226 @@
+@import '../variables';
+
+.contact-section {
+  padding: $spacing-xl 0;
+  background: $card-bg;
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    @include gradient-text;
+  }
+
+  &__title-underline {
+    width: 100px;
+    height: 4px;
+    background: $gradient-primary;
+    margin: 0 auto;
+    border-radius: 50px;
+    margin-bottom: $spacing-md;
+  }
+
+  &__subtitle {
+    color: $text-light;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &__section-title {
+    color: $text-light;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__info-cards {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__info-card {
+    @include card-style;
+    border: none;
+    margin-bottom: $spacing-md;
+  }
+
+  &__info-card-body {
+    display: flex;
+    align-items: center;
+    padding: $spacing-lg;
+  }
+
+  &__info-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: $gradient-primary;
+    @include flex-center;
+    margin-right: $spacing-md;
+    flex-shrink: 0;
+  }
+
+  &__info-label {
+    color: $text-light;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__info-link {
+    color: $primary-blue;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: lighten($primary-blue, 10%);
+    }
+  }
+
+  &__info-text {
+    color: $text-secondary;
+  }
+
+  &__action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    @media (min-width: 576px) {
+      flex-direction: row;
+    }
+  }
+
+  &__action-btn {
+    @include flex-center;
+    gap: $spacing-sm;
+    padding: $spacing-md $spacing-lg;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all $transition-normal;
+    min-width: 200px;
+
+    &--primary {
+      @include button-primary;
+    }
+
+    &--outline {
+      background: transparent;
+      border: 2px solid $primary-blue;
+      color: $primary-blue;
+
+      &:hover {
+        background: $primary-blue;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: $shadow-glow;
+      }
+    }
+  }
+
+  &__social {
+    margin-bottom: 0;
+  }
+
+  &__social-title {
+    color: $text-light;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  &__social-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid $primary-blue;
+    color: $primary-blue;
+    @include flex-center;
+    text-decoration: none;
+    transition: all $transition-normal;
+
+    &:hover {
+      background: $primary-blue;
+      color: white;
+      transform: scale(1.1) translateY(-2px);
+    }
+  }
+
+  &__form-card {
+    @include card-style;
+    border: none;
+  }
+
+  &__form-body {
+    padding: $spacing-lg;
+  }
+
+  &__form-title {
+    color: $text-light;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__form-label {
+    color: $text-light;
+    font-weight: 500;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__form-input,
+  &__form-textarea {
+    background: rgba(30, 41, 59, 0.5) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    color: $text-light !important;
+    border-radius: $border-radius;
+    padding: $spacing-sm $spacing-md;
+    transition: all $transition-fast;
+
+    &:focus {
+      background: rgba(30, 41, 59, 0.7) !important;
+      border-color: $primary-blue !important;
+      box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25) !important;
+      color: $text-light !important;
+    }
+
+    &::placeholder {
+      color: $text-secondary;
+    }
+  }
+
+  &__form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__form-submit {
+    @include button-primary;
+    width: 100%;
+    padding: $spacing-md;
+    @include flex-center;
+    gap: $spacing-sm;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $text-secondary;
+  }
+
+  &__footer-text {
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+

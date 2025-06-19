@@ -1,0 +1,113 @@
+// Цветовая палитра
+$primary-blue: #3b82f6;
+$primary-purple: #8b5cf6;
+$dark-bg: #0f172a;
+$darker-bg: #020617;
+$card-bg: rgba(30, 41, 59, 0.8);
+$text-light: #f8fafc;
+$text-secondary: #94a3b8;
+$border-color: rgba(59, 130, 246, 0.5);
+
+// Градиенты
+$gradient-primary: linear-gradient(135deg, $primary-blue 0%, $primary-purple 100%);
+$gradient-card: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+
+// Размеры
+$border-radius: 12px;
+$border-radius-lg: 20px;
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Анимации
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Тени
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+
+// Миксины
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card-style {
+  background: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  backdrop-filter: blur(10px);
+}
+
+@mixin gradient-text {
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-normal;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin button-primary {
+  background: $gradient-primary;
+  border: none;
+  border-radius: $border-radius;
+  color: white;
+  padding: $spacing-sm $spacing-md;
+  transition: all $transition-normal;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-glow;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+// Утилитарные классы
+.bg-darker-custom {
+  background: $darker-bg !important;
+}
+
+.bg-card-custom {
+  background: $card-bg !important;
+  border: 1px solid $border-color !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.text-gradient {
+  @include gradient-text;
+}
+
+.btn-gradient {
+  @include button-primary;
+}
+
+.project-card {
+  @include card-style;
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $shadow-glow;
+  }
+}
+
