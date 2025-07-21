@@ -18,7 +18,7 @@ const AboutSection = ({ data }) => {
   return (
     <section id="about" className="about-section">
       <Container className="about-section__container">
-        <motion.h2 
+        <motion.h2
           className="about-section__title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const AboutSection = ({ data }) => {
         </motion.h2>
 
         <div className="about-section__content">
-          <motion.div 
+          <motion.div
             className="about-section__image-container"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,15 +37,15 @@ const AboutSection = ({ data }) => {
             viewport={{ once: true }}
           >
             <div className="about-section__image">
-              <img 
-                src="/developer-icon.jpg" 
+              <img
+                src="/developer-icon.png"
                 alt="Developer with laptop"
                 className="about-section__profile-image"
               />
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="about-section__info"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -90,7 +90,7 @@ const AboutSection = ({ data }) => {
                 Свободен к сотрудничеству
               </Badge>
               <Badge bg="warning" className="about-section__status-badge">
-                + лет опыта
+                +3 года опыта
               </Badge>
             </div>
           </motion.div>

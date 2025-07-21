@@ -34,7 +34,7 @@ const SkillsSection = ({ data }) => {
       'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg',
       'Apache': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg'
     }
-    
+
     return iconMap[skillName] || 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg'
   }
 
@@ -54,7 +54,6 @@ const SkillsSection = ({ data }) => {
   const categories = [
     { key: 'backend', label: 'Backend', icon: <Database size={20} /> },
     { key: 'frontend', label: 'Frontend', icon: <Globe size={20} /> },
-    { key: 'mobile', label: 'Mobile', icon: <Smartphone size={20} /> },
     { key: 'tools', label: 'Tools', icon: <Code size={20} /> }
   ]
 
@@ -64,7 +63,7 @@ const SkillsSection = ({ data }) => {
   return (
     <section id="skills" className="skills-section">
       <Container className="skills-section__container">
-        <motion.h2 
+        <motion.h2
           className="skills-section__title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +73,7 @@ const SkillsSection = ({ data }) => {
           Навыки и технологии
         </motion.h2>
 
-        <motion.div 
+        <motion.div
           className="skills-section__categories"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,8 +84,8 @@ const SkillsSection = ({ data }) => {
             <Button
               key={category.key}
               className={`skills-section__category-btn ${
-                activeCategory === category.key 
-                  ? 'skills-section__category-btn--active' 
+                activeCategory === category.key
+                  ? 'skills-section__category-btn--active'
                   : 'skills-section__category-btn--inactive'
               }`}
               onClick={() => setActiveCategory(category.key)}
@@ -98,7 +97,7 @@ const SkillsSection = ({ data }) => {
         </motion.div>
 
         <div className="skills-section__content">
-          <motion.div 
+          <motion.div
             className="skills-section__list"
             key={activeCategory}
             initial={{ opacity: 0, x: -30 }}
@@ -118,7 +117,7 @@ const SkillsSection = ({ data }) => {
                   <span className="skills-section__item-percentage">{skill.level}%</span>
                 </div>
                 <div className="skills-section__progress">
-                  <motion.div 
+                  <motion.div
                     className="skills-section__progress-bar"
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
@@ -129,7 +128,7 @@ const SkillsSection = ({ data }) => {
             ))}
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="skills-section__visualization"
             key={`${activeCategory}-viz`}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -141,7 +140,7 @@ const SkillsSection = ({ data }) => {
               const radius = 150
               const x = Math.cos((angle * Math.PI) / 180) * radius
               const y = Math.sin((angle * Math.PI) / 180) * radius
-              
+
               return (
                 <motion.div
                   key={skill.name}
@@ -155,7 +154,7 @@ const SkillsSection = ({ data }) => {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   whileHover={{ scale: 1.1 }}
                 >
-                  <img 
+                  <img
                     src={getSkillIcon(skill.name)}
                     alt={skill.name}
                     className="skills-section__skill-circle-icon"

@@ -8,6 +8,10 @@
   position: relative;
   overflow: hidden;
 
+    @media screen and (max-width: 576px) {
+        top: 100px;
+    }
+
   &__background {
     position: absolute;
     top: 0;
@@ -37,7 +41,7 @@
     font-weight: 700;
     margin-bottom: $spacing-md;
     @include gradient-text;
-    
+
     &--typing {
       border-right: 3px solid $primary-blue;
       animation: blink 1s infinite;
@@ -69,12 +73,12 @@
     font-size: 1.1rem;
     padding: $spacing-md $spacing-lg;
     text-decoration: none;
-    
+
     &--outline {
       background: transparent;
       border: 2px solid $primary-blue;
       color: $primary-blue;
-      
+
       &:hover {
         background: $primary-blue;
         color: white;
@@ -82,14 +86,28 @@
     }
   }
 
-  &__scroll-indicator {
-    position: absolute;
-    bottom: $spacing-lg;
-    left: 50%;
-    transform: translateX(-50%);
-    color: $text-secondary;
-    animation: bounce 2s infinite;
-  }
+    &__scroll-indicator {
+        position: absolute;
+        bottom: $spacing-lg;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $text-secondary;
+        animation: bounce 2s infinite;
+
+        // Удаление базовых стилей кнопки
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+
+        // Убираем webkit/moz стили по умолчанию
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
 }
 
 @keyframes blink {

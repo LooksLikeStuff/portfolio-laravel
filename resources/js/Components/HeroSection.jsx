@@ -28,7 +28,7 @@ const HeroSection = ({ data }) => {
   return (
     <section className="hero-section">
       <div className="hero-section__background" />
-      
+
       <Container className="hero-section__content">
         <Row className="justify-content-center">
           <Col lg={10}>
@@ -50,7 +50,7 @@ const HeroSection = ({ data }) => {
                 </motion.span>
               </h1>
 
-              <motion.h2 
+              <motion.h2
                 className="hero-section__subtitle"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -59,7 +59,7 @@ const HeroSection = ({ data }) => {
                 {data?.title || 'Fullstack разработчик'}
               </motion.h2>
 
-              <motion.p 
+              <motion.p
                 className="hero-section__description"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -68,7 +68,7 @@ const HeroSection = ({ data }) => {
                 {data?.description || 'Создаю современные веб-приложения с использованием передовых технологий'}
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 className="hero-section__buttons"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ const HeroSection = ({ data }) => {
                   <Mail size={20} />
                   Связаться со мной
                 </a>
-                <a href="/resume.pdf" className="hero-section__button hero-section__button--outline">
+                <a href="/download" className="hero-section__button hero-section__button--outline">
                   <Download size={20} />
                   Скачать резюме
                 </a>
@@ -88,7 +88,7 @@ const HeroSection = ({ data }) => {
         </Row>
       </Container>
 
-      <button 
+      <button
         className="hero-section__scroll-indicator"
         onClick={scrollToAbout}
       >

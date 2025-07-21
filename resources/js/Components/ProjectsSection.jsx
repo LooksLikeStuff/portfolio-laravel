@@ -36,7 +36,7 @@ const ProjectsSection = ({ data }) => {
     }
   }
 
-  const filteredProjects = data?.filter(project => 
+  const filteredProjects = data?.filter(project =>
     filter === 'all' || project.category === filter
   ) || []
 
@@ -99,7 +99,7 @@ const ProjectsSection = ({ data }) => {
               {filteredProjects.map((project, index) => (
                 <Col key={project.id} lg={4} md={6}>
                   <motion.div variants={itemVariants}>
-                    <Card 
+                    <Card
                       className="projects-section__card"
                       onClick={() => handleProjectClick(project)}
                     >
@@ -107,8 +107,8 @@ const ProjectsSection = ({ data }) => {
                       <div className="projects-section__card-image">
                         <div className="projects-section__card-image-icon">🚀</div>
                         <div className="projects-section__card-image-status">
-                          <Badge 
-                            bg={getStatusColor(project.status)} 
+                          <Badge
+                            bg={getStatusColor(project.status)}
                             className={`projects-section__status projects-section__status--${getStatusColor(project.status)}`}
                           >
                             {project.status}
@@ -148,10 +148,7 @@ const ProjectsSection = ({ data }) => {
                             Подробнее
                           </Button>
                           <div className="projects-section__card-links">
-                            <a href="#" className="projects-section__card-link">
-                              <Github size={16} />
-                            </a>
-                            <a href="#" className="projects-section__card-link">
+                            <a href={project.url} className="projects-section__card-link">
                               <ExternalLink size={16} />
                             </a>
                           </div>
@@ -174,9 +171,9 @@ const ProjectsSection = ({ data }) => {
       </Container>
 
       {/* Project details modal */}
-      <Modal 
-        show={showModal} 
-        onHide={() => setShowModal(false)} 
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
         size="lg"
         centered
         className="projects-section__modal"
@@ -188,13 +185,13 @@ const ProjectsSection = ({ data }) => {
           {selectedProject && (
             <div>
               <div className="mb-3">
-                <Badge 
-                  bg={getStatusColor(selectedProject.status)} 
+                <Badge
+                  bg={getStatusColor(selectedProject.status)}
                   className={`projects-section__status projects-section__status--${getStatusColor(selectedProject.status)} me-2`}
                 >
                   {selectedProject.status}
                 </Badge>
-                <Badge 
+                <Badge
                   bg="secondary"
                   className="projects-section__status projects-section__status--secondary"
                 >
@@ -206,12 +203,12 @@ const ProjectsSection = ({ data }) => {
                 {selectedProject.description}
               </p>
 
-              <h6 className="mb-3">Основные возможности:</h6>
-              <ul className="mb-4">
-                {selectedProject.features?.map((feature, idx) => (
-                  <li key={idx} className="mb-1">{feature}</li>
-                ))}
-              </ul>
+              {/*<h6 className="mb-3">Основные возможности:</h6>*/}
+              {/*<ul className="mb-4">*/}
+              {/*  {selectedProject.features?.map((feature, idx) => (*/}
+              {/*    <li key={idx} className="mb-1">{feature}</li>*/}
+              {/*  ))}*/}
+              {/*</ul>*/}
 
               <h6 className="mb-3">Технологии:</h6>
               <div className="d-flex flex-wrap gap-2 mb-4">
@@ -231,10 +228,10 @@ const ProjectsSection = ({ data }) => {
           <Button variant="outline-secondary" onClick={() => setShowModal(false)}>
             Закрыть
           </Button>
-          <Button className="projects-section__card-button">
-            <ExternalLink size={16} />
+          <a href={selectedProject?.url} target="_blank" className="projects-section__card-button">
+            <ExternalLink size={16} href={selectedProject?.url} />
             Открыть проект
-          </Button>
+          </a>
         </Modal.Footer>
       </Modal>
     </section>

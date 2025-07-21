@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResumeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 
@@ -15,4 +16,4 @@ use App\Http\Controllers\PortfolioController;
 */
 
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio');
-
+Route::get('download', [ResumeController::class, 'download'])->name('resume.download');

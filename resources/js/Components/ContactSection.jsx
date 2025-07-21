@@ -53,7 +53,7 @@ const ContactSection = ({ data }) => {
             <Col lg={6}>
               <motion.div variants={itemVariants}>
                 <h3 className="contact-section__section-title">Контактная информация</h3>
-                
+
                 <div className="contact-section__info-cards">
                   <motion.div whileHover={{ scale: 1.02 }}>
                     <Card className="contact-section__info-card">
@@ -63,7 +63,7 @@ const ContactSection = ({ data }) => {
                         </div>
                         <div>
                           <h6 className="contact-section__info-label">Email</h6>
-                          <a 
+                          <a
                             href={`mailto:${data?.email || 'thetroop3r1337@gmail.com'}`}
                             className="contact-section__info-link"
                           >
@@ -82,7 +82,7 @@ const ContactSection = ({ data }) => {
                         </div>
                         <div>
                           <h6 className="contact-section__info-label">Телефон</h6>
-                          <a 
+                          <a
                             href={`tel:${data?.phone || '+79158506935'}`}
                             className="contact-section__info-link"
                           >
@@ -111,19 +111,19 @@ const ContactSection = ({ data }) => {
                 {/* Action buttons */}
                 <div className="contact-section__action-buttons">
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button className="contact-section__action-btn contact-section__action-btn--primary">
+                    <a href='/download' className="contact-section__action-btn contact-section__action-btn--primary">
                       <Download size={20} />
                       Скачать резюме
-                    </Button>
+                    </a>
                   </motion.div>
-                  
+
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button 
+                    <Button
                       className="contact-section__action-btn contact-section__action-btn--outline"
                       href={`mailto:${data?.email || 'thetroop3r1337@gmail.com'}`}
                     >
                       <Mail size={20} />
-                      Написать письмо
+                      Написать на почту
                     </Button>
                   </motion.div>
                 </div>
@@ -134,17 +134,11 @@ const ContactSection = ({ data }) => {
                   <div className="contact-section__social-links">
                     <motion.a
                       whileHover={{ scale: 1.1, y: -2 }}
-                      href="#"
+                      href={data.social.github}
+                      target="_blank"
                       className="contact-section__social-link"
                     >
                       <Github size={20} />
-                    </motion.a>
-                    <motion.a
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      href="#"
-                      className="contact-section__social-link"
-                    >
-                      <Linkedin size={20} />
                     </motion.a>
                   </div>
                 </div>
@@ -157,7 +151,7 @@ const ContactSection = ({ data }) => {
                 <Card className="contact-section__form-card">
                   <Card.Body className="contact-section__form-body">
                     <h3 className="contact-section__form-title">Отправить сообщение</h3>
-                    
+
                     <Form onSubmit={handleSubmit}>
                       <Row className="g-3">
                         <Col sm={6}>
@@ -203,7 +197,7 @@ const ContactSection = ({ data }) => {
                         </Col>
                         <Col xs={12}>
                           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                            <Button 
+                            <Button
                               type="submit"
                               className="contact-section__form-submit"
                             >

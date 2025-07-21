@@ -52,18 +52,22 @@ const ExperienceSection = ({ data }) => {
                       <Row className="align-items-start">
                         <Col md={3} className="mb-3 mb-md-0">
                           <div className="experience-section__meta">
-                            <Badge 
+                            <Badge
                               className={`experience-section__status ${
-                                experience.current 
-                                  ? 'experience-section__status--current' 
+                                experience.end_date === null
+                                  ? 'experience-section__status--current'
                                   : 'experience-section__status--completed'
                               }`}
                             >
-                              {experience.current ? 'Текущая' : 'Завершена'}
+                              {experience.end_date === null ? 'Текущая' : 'Завершена'}
                             </Badge>
                             <div className="experience-section__duration">
                               <Calendar size={16} className="me-1" />
-                              {experience.duration}
+                              {experience.start_date}
+                              {experience.end_date
+                                  ? ` - ${experience.end_date}`
+                                  : ' - current date'
+                              }
                             </div>
                           </div>
                         </Col>
@@ -71,8 +75,8 @@ const ExperienceSection = ({ data }) => {
                         <Col md={9}>
                           <div className="experience-section__header">
                             <div className="experience-section__company-info">
-                              <h4 className="experience-section__company">{experience.company}</h4>
-                              <h5 className="experience-section__position">{experience.position}</h5>
+                              <h4 className="experience-section__company">{experience.company_name}</h4>
+                              <h5 className="experience-section__position">{experience.job_title}</h5>
                             </div>
                             <div className="experience-section__location-info">
                               <div className="experience-section__location">
@@ -80,9 +84,9 @@ const ExperienceSection = ({ data }) => {
                                 {experience.location}
                               </div>
                               {experience.website && (
-                                <a 
-                                  href={`https://${experience.website}`} 
-                                  target="_blank" 
+                                <a
+                                  href={`https://${experience.website}`}
+                                  target="_blank"
                                   rel="noopener noreferrer"
                                   className="experience-section__website"
                                 >
@@ -101,9 +105,10 @@ const ExperienceSection = ({ data }) => {
                           <div className="experience-section__responsibilities">
                             <h6 className="experience-section__section-title">Основные задачи:</h6>
                             <ul className="experience-section__list">
-                              {experience.responsibilities?.map((responsibility, idx) => (
-                                <li key={idx} className="experience-section__list-item">{responsibility}</li>
-                              ))}
+                              {experience.tasks
+                                  ? <li className="experience-section__list-item">{experience.tasks}</li>
+                                  : ''
+                              }
                             </ul>
                           </div>
 
