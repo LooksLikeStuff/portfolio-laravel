@@ -16,11 +16,14 @@ class MyCase extends Model
         'type',
         'description',
         'technologies',
+        'tasks',
+        'result',
         'icon',
     ];
 
     protected $casts = [
         'type' => CaseTypes::class,
         'technologies' => 'array',
+        'tasks' => 'array',
     ];
 }

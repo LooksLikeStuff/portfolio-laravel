@@ -217,7 +217,7 @@ const ContactSection = ({ data }) => {
           {/* Footer */}
           <motion.div variants={itemVariants} className="contact-section__footer">
             <p className="contact-section__footer-text">
-              © 2025 Данила Скворцов. Создано с ❤️ на Laravel + React
+              © 2025 Данила Скворцов. Road to Silicon Valley
             </p>
           </motion.div>
         </motion.div>

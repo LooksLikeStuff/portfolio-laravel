@@ -11,14 +11,16 @@ class PortfolioController extends Controller
 {
     public function index()
     {
+        $description = 'Fullstack-разработчик с опытом 3+ года. Работаю автономно: могу взять задачу и довести до результата без контроля и микроменеджмента.';
+
         $portfolioData = [
             'hero' => [
                 'name' => 'Данила Скворцов',
                 'title' => 'Fullstack-разработчик',
-                'description' => 'Fullstack-разработчик с опытом 3+ года. Работаю автономно: могу взять задачу и довести до результата без контроля и микроменеджмента.',
+                'description' => $description,
             ],
             'about' => [
-                'description' => 'Fullstack-разработчик с опытом 3+ года. Работаю автономно: могу взять задачу и довести до результата без контроля и микроменеджмента.',
+                'description' => $description,
                 'location' => 'Пхукет',
                 'age' => '23',
                 'email' => 'thetroop3r1337@gmail.com',

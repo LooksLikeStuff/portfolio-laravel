@@ -201,18 +201,19 @@ const ProjectsSection = ({ data }) => {
                 </Badge>
               </div>
 
+              <h5 className="mb-3">Реализованные задачи:</h5>
+              <ul className="mb-4">
+                {selectedProject.tasks?.map((task, idx) => (
+                  <li key={idx} className="mb-1">{task}</li>
+                ))}
+              </ul>
+
+              <h5 className="mb-3">Результат:</h5>
               <p className="mb-4">
-                {selectedProject.description}
+                {selectedProject?.result}
               </p>
 
-              {/*<h6 className="mb-3">Основные возможности:</h6>*/}
-              {/*<ul className="mb-4">*/}
-              {/*  {selectedProject.features?.map((feature, idx) => (*/}
-              {/*    <li key={idx} className="mb-1">{feature}</li>*/}
-              {/*  ))}*/}
-              {/*</ul>*/}
-
-              <h6 className="mb-3">Технологии:</h6>
+              <h5 className="mb-3">Технологии:</h5>
               <div className="d-flex flex-wrap gap-2 mb-4">
                 {selectedProject.technologies?.map((tech, idx) => (
                   <span
