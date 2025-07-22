@@ -10,10 +10,10 @@ const ProjectsSection = ({ data }) => {
 
   const categories = {
     all: 'Все проекты',
-    'web-app': 'Веб-приложения',
+    web: 'Веб-приложения',
     education: 'Образование',
     business: 'Бизнес',
-    service: 'Сервисы',
+    services: 'Сервисы',
     portfolio: 'Портфолио'
   }
 
@@ -37,7 +37,7 @@ const ProjectsSection = ({ data }) => {
   }
 
   const filteredProjects = data?.filter(project =>
-    filter === 'all' || project.category === filter
+    filter === 'all' || project.type === filter
   ) || []
 
   const handleProjectClick = (project) => {
@@ -104,23 +104,25 @@ const ProjectsSection = ({ data }) => {
                       onClick={() => handleProjectClick(project)}
                     >
                       {/* Project image placeholder */}
-                      <div className="projects-section__card-image">
-                        <div className="projects-section__card-image-icon">🚀</div>
-                        <div className="projects-section__card-image-status">
-                          <Badge
-                            bg={getStatusColor(project.status)}
-                            className={`projects-section__status projects-section__status--${getStatusColor(project.status)}`}
-                          >
-                            {project.status}
-                          </Badge>
+                        <div className="projects-section__card-image">
+                            <div className="projects-section__card-image-icon">
+                                <img src={`/img/cases/${project.icon}`} alt={`${project.name} icon`}/>
+                            </div>
+                            <div className="projects-section__card-image-status">
+                                <Badge
+                                    bg={getStatusColor('Завершен')}
+                                    className={`projects-section__status projects-section__status--${getStatusColor(project.status)}`}
+                                >
+                                    Завершен
+                                </Badge>
+                            </div>
+                            <div className="projects-section__card-image-year">
+                                {project.year}
+                            </div>
                         </div>
-                        <div className="projects-section__card-image-year">
-                          {project.year}
-                        </div>
-                      </div>
 
-                      <Card.Body className="projects-section__card-body">
-                        <h5 className="projects-section__card-title">{project.title}</h5>
+                        <Card.Body className="projects-section__card-body">
+                        <h5 className="projects-section__card-title">{project.name}</h5>
                         <p className="projects-section__card-description">
                           {project.description}
                         </p>
@@ -179,7 +181,7 @@ const ProjectsSection = ({ data }) => {
         className="projects-section__modal"
       >
         <Modal.Header closeButton>
-          <Modal.Title>{selectedProject?.title}</Modal.Title>
+          <Modal.Title>{selectedProject?.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {selectedProject && (

@@ -16,6 +16,7 @@ class MyCase extends Model
         'type',
         'description',
         'technologies',
+        'icon',
     ];
 
     protected $casts = [

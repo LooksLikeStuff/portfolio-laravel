@@ -30,9 +30,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::ELASTICSEARCH,
                 ],
                 'type' => CaseTypes::WEB_APPLICATIONS,
+                'icon' => 'keyway.svg',
             ],
             [
-                'name' => 'iamstuff.space',
+                'name' => 'IAmStuff',
                 'url' => 'https://iamstuff.space',
                 'description' => 'Мой сайт портфолио',
                 'technologies' => [
@@ -42,9 +43,23 @@ class MyCaseSeeder extends Seeder
                     Technologies::DOCKER,
                 ],
                 'type' => CaseTypes::PORTFOLIO,
+                'icon' => 'iamstuff.svg',
             ],
             [
-                'name' => 'msn24.ru',
+                'name' => 'MyFamilyTravel',
+                'url' => 'https://myfamilytravel.ru',
+                'description' => 'Семейные туры по России. Комфортный отдых и приключения для всей семьи',
+                'technologies' => [
+                    Technologies::BITRIX,
+                    Technologies::SCSS,
+                    Technologies::JAVASCRIPT,
+                    Technologies::JQUERY,
+                ],
+                'type' => CaseTypes::BUSINESS,
+                'icon' => 'myfamilytravel.svg',
+            ],
+            [
+                'name' => 'msn24',
                 'url' => 'https://msn24.ru',
                 'description' => 'Выкуп недвижимости и долей в квартирах в Москве за 24 часа',
                 'technologies' => [
@@ -53,10 +68,11 @@ class MyCaseSeeder extends Seeder
                     Technologies::JQUERY,
                 ],
                 'type' => CaseTypes::BUSINESS,
+                'icon' => 'msn24.svg',
             ],
             [
-                'name' => 'prochitala.ru',
-                'url' => 'https://prochitala.ru',
+                'name' => 'Prochitala',
+                'url' => 'http://prochitala.ru',
                 'description' => 'Читательский дневник. Чтобы не забыть, что было прочитано, и удобно посчитать статистику.',
                 'technologies' => [
                     Technologies::LARAVEL,
@@ -66,9 +82,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::JQUERY,
                 ],
                 'type' => CaseTypes::EDUCATION,
+                'icon' => 'prochitala.svg',
             ],
             [
-                'name' => 'qq12345.ru',
+                'name' => 'qq12345',
                 'url' => 'https://qq12345.ru',
                 'description' => 'Qqшечка. Менеджер паролей для IT',
                 'technologies' => [
@@ -80,9 +97,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::REDIS,
                 ],
                 'type' => CaseTypes::SERVICES,
+                'icon' => 'qq12345.svg',
             ],
             [
-                'name' => 'chess.auringontalo.fi',
+                'name' => 'Imatran Shakki chess',
                 'url' => 'https://chess.auringontalo.fi',
                 'description' => 'Шахматный клуб Imatran shakki. Обучение, призы за победы в турнирах и участие в челленджах!',
                 'technologies' => [
@@ -93,9 +111,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::JQUERY,
                 ],
                 'type' => CaseTypes::EDUCATION,
+                'icon' => 'chess.svg',
             ],
             [
-                'name' => 'checkyourmail.ru',
+                'name' => 'CheckYourMail',
                 'url' => 'https://checkyourmail.ru',
                 'description' => 'Проверьте, не попадают ли ваши письма в СПАМ',
                 'technologies' => [
@@ -104,9 +123,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::DOCKER,
                 ],
                 'type' => CaseTypes::SERVICES,
+                'icon' => 'checkyourmail.svg',
             ],
             [
-                'name' => 'crm.quicktum.ru',
+                'name' => 'Quicktum CRM',
                 'url' => 'https://crm.quicktum.ru',
                 'description' => 'Внутренний CRM для веб-студии quicktum',
                 'technologies' => [
@@ -119,9 +139,10 @@ class MyCaseSeeder extends Seeder
                     Technologies::JQUERY,
                 ],
                 'type' => CaseTypes::BUSINESS,
+                'icon' => 'quicktum.svg',
             ],
             [
-                'name' => 'triathlonshop.ru',
+                'name' => 'TriathlonShop',
                 'url' => 'https://triathlonshop.ru',
                 'description' => 'Все для занятий триатлоном на одном сайте. Велосипед, бег, плавание',
                 'technologies' => [
@@ -131,6 +152,7 @@ class MyCaseSeeder extends Seeder
                     Technologies::JQUERY,
                 ],
                 'type' => CaseTypes::BUSINESS,
+                'icon' => 'triathlonshop.svg',
             ],
         ];
 

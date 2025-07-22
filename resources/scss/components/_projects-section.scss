@@ -89,6 +89,13 @@
 
     &-icon {
       font-size: 3rem;
+
+        img {
+            min-width: 64px;
+            min-height: 64px;
+            max-width: 128px;
+            max-height: 128px;
+        }
     }
 
     &-status {
@@ -232,7 +239,7 @@
 
     .modal-header {
       border-bottom: 1px solid rgba(148, 163, 184, 0.2);
-      
+
       .modal-title {
         color: $text-light;
         font-weight: 700;
